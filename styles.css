@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple-color: #ad28eb;
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+
+body {
+    font-size: 16px;
+    font-family: "Work Sans", sans-serif;
+    background: url(./images/background-pattern-desktop.svg) var(--light-pink) no-repeat;
+    background-size: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+/* Style the card */
+.card {
+    display: block;
+    margin: 160px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+    padding: 15px 20px 0;
+}
+
+.card .title {
+    display: flex;
+    flex-direction: row;
+    color: var(--dark-purple);
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.card .title img {
+    margin-right: 10px;
+}
+
+/* Style the button are used to open and close the accordion panel */
+.card .main-content .faqs-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .main-content .faqs-btn button {
+    color: var(--dark-purple);
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: left;
+    font-size: 16px;
+    transition: 0.3s ease-out;
+}
+
+/* Change color of buttons on hover */
+.card .main-content .faqs-btn *:hover {
+    color: var(--purple-color);
+    transform: scale(1.05);
+}
+
+/* Style the accordion panel */
+.card .main-content .panel {
+    color: var(--grayish-purple);
+    font-weight: 400;
+    margin: 15px 0;
+    border-bottom: 1px solid var(--light-pink);
+    height: 0;
+    overflow: hidden;
+}
+
+.card .main-content .panel p {
+    margin-bottom: 15px;
+}
+
+.minus-icon {
+    display: none;
+    transition: 0.5s;
+}
+
+/* Style JavaScript */
+.card .panel.active {
+    height: 100%;
+}
+
+.card .minus-icon.active {
+    display: block;
+}
+
+.card .plus-icon.active {
+    display: none;
+}
+
+/* Responsive to the width of the mobile */
+@media (max-width: 530px) {
+    body {
+        background: url(./images/background-pattern-mobile.svg) var(--light-pink) no-repeat;
+        background-size: 100%;
+        padding: 20px;
+    }
+
+    .card .title {
+        font-size: 18px;
+    }
+}
