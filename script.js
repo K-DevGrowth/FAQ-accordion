@@ -1,5 +1,5 @@
 // Get all elements with class
-const elements = () => {
+const faqElements = () => {
     const acc = document.querySelectorAll('.faqs-btn');
     const panels = document.querySelectorAll('.panel');
     const minusIcons = document.querySelectorAll('.minus-icon');
@@ -10,9 +10,9 @@ const elements = () => {
 }
 
 // Toggle between hiding and showing the 'active' accordion panel and 'active' icon
-elements().acc.forEach((btn, index) => {
+faqElements().acc.forEach((btn, index) => {
     btn.addEventListener('click', () => {
-        elements().addActive.forEach(e => e[index].classList.toggle('active'));
+        faqElements().addActive.forEach(e => e[index].classList.toggle('active'));
     })
 })
 
